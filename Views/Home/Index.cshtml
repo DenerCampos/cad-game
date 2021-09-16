@@ -1,0 +1,27 @@
+﻿@model IEnumerable<cad_games.Models.Game>  
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Zerou</th>
+            <th>Data</th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Finished</td>
+                    <td>@item.Date</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
