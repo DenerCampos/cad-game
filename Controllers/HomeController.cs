@@ -17,16 +17,17 @@ namespace cad_games.Controllers
         {
             _gameRepository = gameRepository;
         }
-        //private readonly ILogger<HomeController> _logger;
-
-        // public HomeController(ILogger<HomeController> logger)
-        // {
-        //     _logger = logger;
-        // }
 
         public IActionResult Index()
         {
-            return View(_gameRepository.Games);
+            //_gameRepository.create(new Game("teste", true, "2021-06-07"));
+            return View(_gameRepository.findAll);
+        }
+
+        public IActionResult Create()
+        {
+            //_gameRepository.create(new Game("teste", true, "2021-06-07"));
+            return View(_gameRepository.findAll);
         }
 
         public IActionResult Privacy()
