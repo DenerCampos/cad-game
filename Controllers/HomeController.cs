@@ -20,7 +20,7 @@ namespace cad_games.Controllers
 
         public IActionResult Index()
         {
-            //_gameRepository.create(new Game("teste", true, "2021-06-07"));
+            var teste = _gameRepository.findAll;
             return View(_gameRepository.findAll);
         }
 

@@ -3,14 +3,19 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<div style="padding: 16px 0">
+    <button type="button" class="btn btn-primary">
+        Novo game
+    </button>
+</div>
 <div class="text-center">
-    <table>
+    <table class="table table-striped table-hover">
         <thead>
             <th>Id</th>
             <th>Nome</th>
             <th>Zerou</th>
             <th>Data</th>
+            <th>Opções</th>
         </thead>
         <tbody>
             @foreach (var item in Model)
@@ -20,6 +25,14 @@
                     <td>@item.Name</td>
                     <td>@item.Finished</td>
                     <td>@item.Date</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-id="@item.Id">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> edit
+                        </button>
+                        <button type="button" class="btn btn-danger" data-id="@item.Id">
+                            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> remove
+                        </button>
+                    </td>
                 </tr>
             }
         </tbody>
